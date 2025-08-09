@@ -18,5 +18,5 @@ else
     dnf install mysql
     validate $? mysql
     dnf install git
-    validate
+    validate $? git
 fi
