@@ -7,7 +7,7 @@ then
     echo "you are not root user, please re-try with root user"
 else
     echo "you are root user, hence proceeding"
-    dnf istall mysql
+    dnf install mysql
     if [ $? -eq 0 ]
     then
         echo "package installed success"
