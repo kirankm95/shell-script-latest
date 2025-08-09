@@ -7,19 +7,19 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-echo "this script started executing at ${TIME}" &>> $LOGFILE
+echo -e "this script started executing at ${TIME}" &>> $LOGFILE
 
 validate(){
     if [ $1 -eq 0 ]
     then
-        echo "$2 installed $G success $N"
+        echo -e "$2 installed $G success $N"
     else
-        echo "$2 installed $R failed $N"
+        echo -e "$2 installed $R failed $N"
     fi
 }
 if [ $ID -ne 0 ]
 then
-    echo "$Y you are not root user, please re-try with root user $N"
+    echo -e "$Y you are not root user, please re-try with root user $N"
     exit 1
 else
     echo "$G you are root user, hence proceeding $N"
