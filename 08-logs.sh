@@ -1,6 +1,9 @@
 #!/bin/bash
-
 ID=$(id -u)
+TIME=$(date +%F-%H-%M-%S)
+LOGFILE=$(/tmp/$0-$TIME)
+
+echo "this script started executing at ${TIME}"
 
 validate(){
     if [ $1 -eq 0 ]
