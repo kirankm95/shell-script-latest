@@ -12,5 +12,5 @@ then
 
 else
     echo "you are not root user, hence exiting from this script"
-    exit
+    exit 1
 fi
