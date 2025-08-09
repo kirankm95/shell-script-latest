@@ -1,5 +1,5 @@
 #!/bin/bash
-i=29
+i=$1
 
 if [ $i -gt 100 ]
 then
