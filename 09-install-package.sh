@@ -29,12 +29,12 @@ fi
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>> $LOGFILE
     if [ $? -eq 0 ]
     then
         echo -e "$Y mentioned $package already installed $N"
     else
-        dnf install $package -y
+        dnf install $package -y &>> $LOGFILE
         validate $? $package
     fi
 done
