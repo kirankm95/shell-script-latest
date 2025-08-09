@@ -1,7 +1,7 @@
 #!/bin/bash
 ID=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
-LOGFILE=$(/tmp/$0-$TIME)
+LOGFILE=$(/tmp/$0-$TIME.log)
 
 echo "this script started executing at ${TIME}"
 
