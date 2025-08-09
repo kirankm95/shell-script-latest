@@ -10,8 +10,15 @@ else
     dnf install mysql
     if [ $? -eq 0 ]
     then
-        echo "package installed success"
+        echo "package mysql installed success"
     else
-        echo "package installed failed"
+        echo "package mysql installed failed"
+    fi
+    dnf install git
+    if [ $? -eq 0 ]
+    then
+        echo "package git installed success"
+    else
+        echo "package git installed failed"
     fi
 fi
