@@ -9,6 +9,7 @@ then
         echo "mysql installation is success"
     else
         echo "mysql installation is failed"
+    fi
 
 else
     echo "you are not root user, hence exiting from this script"
