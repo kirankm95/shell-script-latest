@@ -29,7 +29,7 @@ fi
 
 for package in $@
 do
-    dnf installed $package
+    yum installed $package
     if [ $? -eq 0 ]
     then
         echo -e "$Y mentioned $package already installed $N"
