@@ -22,7 +22,7 @@ then
     echo -e "$Y you are not root user, please re-try with root user $N"
     exit 1
 else
-    echo "$G you are root user, hence proceeding $N"
+    echo -e "$G you are root user, hence proceeding $N"
     dnf install mysql -y &>> $LOGFILE
     validate $? mysql
     dnf install git -y &>> $LOGFILE
