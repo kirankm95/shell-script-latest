@@ -44,6 +44,6 @@ while IFS=":" read -r username
 do
     echo "username is: $username"
 #    rm -rf $line
-done <<< $SOURCE_DIR
+done < $SOURCE_DIR
 
 validate $? "fetching passwd file entries"
