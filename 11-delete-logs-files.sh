@@ -13,9 +13,9 @@ echo -e "this script started executing at ${TIME}" &>> $LOGFILE
 validate(){
     if [ $1 -eq 0 ]
     then
-        echo -e "$2 installed $G success $N"
+        echo -e "$2 is $G success $N"
     else
-        echo -e "$2 installed $R failed $N"
+        echo -e "$2 is  $R failed $N"
     fi
 }
 
@@ -43,6 +43,6 @@ do
     echo "deleting line: $line"
 
 #     $line
-done <<< DELETE
+done <<< $DELETE
 
 validate $? "deleting log files"
