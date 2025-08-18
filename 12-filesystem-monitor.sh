@@ -2,7 +2,8 @@
 ID=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIME.log"
-SOURCE_DIR="/tmp/shell-script-logs"
+USAGE=$(df -khT | grep -v Filesystem | awk '{print $6}' | tr -d %)
+FileSystem=$(df -khT | grep -vE 'tmpfs|Filesystem' | awk '{print $1}')
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -26,3 +27,10 @@ if [ $ID -ne 0 ]
     else
         echo -e "$G you are root user, hence proceeding $N"
 fi
+
+while IFS= read -r line
+do
+    echo "$FileSystem usage is: $line"
+done < $USAGE
+
+validate $? "usage checking"
