@@ -40,7 +40,7 @@ fi
 
 
 #while IFS=":" read -r username password UID GID fullname homefolder shell
-while IFS=":" read -r username
+while IFS=":" read -r username password UID GID fullname homefolder shell
 do
     echo "username is: $username"
 #    rm -rf $line
