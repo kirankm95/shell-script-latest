@@ -43,6 +43,9 @@ fi
 while IFS=":" read -r username password userid groupid fullname homefolder shell
 do
     echo "username is: $username"
+    echo "password is: $password"
+    echo "userid is: $userid"
+    echo "groupid is: $groupid"
 #    rm -rf $line
 done < $SOURCE_DIR
 
