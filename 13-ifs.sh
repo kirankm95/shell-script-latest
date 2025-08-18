@@ -38,10 +38,12 @@ fi
 
 #DELETE=$(find $SOURCE_DIR -name *.log -mtime +30 -type f)
 
-while IFS=":" read -r username password UID GID fullname homefolder shell
+
+#while IFS=":" read -r username password UID GID fullname homefolder shell
+while IFS=":" read -r username
 do
     echo "username is: $username"
 #    rm -rf $line
-done < $SOURCE_DIR
+done <<< $SOURCE_DIR
 
 validate $? "fetching passwd file entries"
