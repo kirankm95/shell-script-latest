@@ -41,7 +41,8 @@ DELETE=$(find $SOURCE_DIR -name *.log -mtime +30 -type f)
 while IFS= read -r line
 do
     echo "deleting line: $line"
-    rm -rf $line
-done <<< DELETE &>> $LOGFILE
+
+#     $line
+done <<< DELETE
 
 validate $? "deleting log files"
