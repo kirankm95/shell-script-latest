@@ -42,6 +42,6 @@ while IFS=":" read -r username password UID GID fullname homefolder shell
 do
     echo "username is: $username"
 #    rm -rf $line
-done <<< $SOURCE_DIR
+done < $SOURCE_DIR
 
 validate $? "fetching passwd file entries"
