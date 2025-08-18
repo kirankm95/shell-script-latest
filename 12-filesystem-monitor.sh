@@ -2,7 +2,7 @@
 ID=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIME.log"
-USAGE=$(df -khT | grep -v Filesystem | awk '{print $6}' | tr -d %)
+USAGE=$(df -khT | grep -vE 'tmpfs|Filesystem' | awk '{print $6}' | tr -d %)
 FileSystem=$(df -khT | grep -vE 'tmpfs|Filesystem' | awk '{print $1}')
 R="\e[31m"
 G="\e[32m"
@@ -31,6 +31,6 @@ fi
 while IFS= read -r line
 do
     echo "$FileSystem usage is: $line"
-done < $USAGE
+done <<< $USAGE
 
 validate $? "usage checking"
