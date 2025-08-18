@@ -30,7 +30,7 @@ fi
 
 while IFS= read -r line
 do
-    echo "$FileSystem usage is: $line"
+    messege="$FileSystem usage is: $line"
 done <<< $USAGE
 
 validate $? "usage checking"
