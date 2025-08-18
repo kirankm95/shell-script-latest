@@ -2,7 +2,7 @@
 ID=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIME.log"
-SOURCE-DIR="{/tmp/shell-script-logs}"
+SOURCE-DIR=`echo "/tmp/shell-script-logs"`
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
